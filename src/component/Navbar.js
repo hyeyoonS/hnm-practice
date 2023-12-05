@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faSearch } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
+import underLine from '../assets/underLine.svg';
 
 const Navbar = () => {
   const menuArray = ['여성', 'Divided', '남성', '신생아/유아', '아동', 'H&M Home', 'Sale', '지속가능성'];
   return (
-    <div>
-      네브바
+    <NavWrapper>
       <div>
         <LoginButton>
           <FontAwesomeIcon icon={faUser} />
-          <div>로그인</div>
+          <Login>로그인</Login>
         </LoginButton>
       </div>
       <LogoSection>
@@ -28,20 +28,32 @@ const Navbar = () => {
           ))}
         </MenuStyle>
       </MenuWrapper>
-      <div>
-        <FontAwesomeIcon icon={faSearch} />
-        <SearchInput type="text" placeholder="제품검색"></SearchInput>
-      </div>
-    </div>
+      <SearchWrapper>
+        <SearchContainer>
+          <FontAwesomeIcon icon={faSearch} />
+          <SearchInput type="text" placeholder="제품검색"></SearchInput>
+          <UnderLine src={underLine} alt="이모지 추가" />
+        </SearchContainer>
+      </SearchWrapper>
+      <div></div>
+    </NavWrapper>
   );
 };
 
 export default Navbar;
 
+const NavWrapper = styled.div`
+  display: column;
+  justify-content: center;
+`;
 const LoginButton = styled.div`
   display: flex;
   justify-content: flex-end;
   margin: 20px;
+`;
+
+const Login = styled.div`
+  padding-left: 5px;
 `;
 
 const LogoSection = styled.div`
@@ -52,6 +64,22 @@ const LogoSection = styled.div`
 const MenuWrapper = styled.div`
   display: flex;
   justify-content: center;
+`;
+
+const SearchWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 20px;
+`;
+
+const UnderLine = styled.img`
+  right: 10px;
+  padding-right: 10px;
+`;
+
+const SearchContainer = styled.div`
+  width: 200px;
 `;
 
 const MenuStyle = styled.ul`
