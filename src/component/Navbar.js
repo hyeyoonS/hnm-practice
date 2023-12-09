@@ -3,16 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faSearch } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 import underLine from '../assets/underLine.svg';
-import { Link} from 'react-router-dom/dist';
+import { Link, useLocation} from 'react-router-dom/dist';
 
 const Navbar = () => {
+  const location=useLocation()
   const menuArray = ['여성', 'Divided', '남성', '신생아/유아', '아동', 'H&M Home', 'Sale', '지속가능성'];
-
-
-
   return (
     <NavWrapper>
-        <Link to="/login">
+        <Link to="/login" style={{ textDecoration: 'none', color: 'inherit' }}>
           <LoginButton>
            <FontAwesomeIcon icon={faUser} />
            <Login>로그인</Login>
@@ -36,7 +34,9 @@ const Navbar = () => {
         <SearchContainer>
           <FontAwesomeIcon icon={faSearch} />
           <SearchInput type="text" placeholder="제품검색"></SearchInput>
-          <UnderLine src={underLine} alt="검색밑줄" />
+          <UnderLineWrapper>
+           <UnderLine src={underLine} alt="검색밑줄" />
+          </UnderLineWrapper>
         </SearchContainer>
       </SearchWrapper>
       <div></div>
@@ -78,9 +78,14 @@ const SearchWrapper = styled.div`
   padding: 20px;
 `;
 
+const UnderLineWrapper = styled.div`
+width: 100%;
+overflow: hidden;`
+
 const UnderLine = styled.img`
   right: 10px;
   padding-right: 10px;
+  vertical-align: top;
   /* width: 30px; */
 `;
 
