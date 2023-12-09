@@ -3,24 +3,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faSearch } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 import underLine from '../assets/underLine.svg';
-import { useLocation, useNavigate } from 'react-router-dom/dist';
+import { Link} from 'react-router-dom/dist';
 
 const Navbar = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
   const menuArray = ['여성', 'Divided', '남성', '신생아/유아', '아동', 'H&M Home', 'Sale', '지속가능성'];
-  const handleLogin=()=>{
-    navigate(`${location.pathname}/login`)
-  }
+
+
 
   return (
     <NavWrapper>
-      <div>
-        <LoginButton onClick={handleLogin}>
-          <FontAwesomeIcon icon={faUser} />
-          <Login>로그인</Login>
-        </LoginButton>
-      </div>
+        <Link to="/login">
+          <LoginButton>
+           <FontAwesomeIcon icon={faUser} />
+           <Login>로그인</Login>
+          </LoginButton>
+        </Link>
       <LogoSection>
         <img
           width={100}
