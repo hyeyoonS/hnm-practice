@@ -4,6 +4,7 @@ import ProductAll from './page/ProductAll';
 import Login from './page/Login';
 import ProductDetail from './page/ProductDetail';
 import Navbar from './component/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 //1. 전체상품페이지, 로그인페이지, 상품상세페이지(1개로재활용)
 //1-1. 공통 네비게이션바 만들기

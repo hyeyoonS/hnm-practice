@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import ProductCard from '../component/ProductCard';
+import styled from 'styled-components';
 
 const ProductAll = () => {
   const [productList, setProductList] = useState([]);
@@ -15,11 +16,42 @@ const ProductAll = () => {
     getProducts();
   }, []);
   return (
-    <div>
-      전체상품페이지
+    <ProductCardContainer>
       <ProductCard />
-    </div>
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+
+    </ProductCardContainer>
   );
 };
 
 export default ProductAll;
+
+
+const ProductCardContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  grid-template-rows: repeat(auto-fit, auto);
+  justify-content: center;
+  gap: 24px;
+  margin: 24px auto 25px auto;
+  align-items: center;
+  width: 729.588px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 240px);
+    grid-template-rows: repeat(auto-fit,);
+    gap: 3px;
+    padding: 0 24px;
+  }
+
+  @media (min-width: 1248px) {
+    margin-top: 12px;
+    padding: 0;
+    grid-template-columns: repeat(3, 240px);
+    grid-template-rows: repeat(auto-fit, );
+  }
+`

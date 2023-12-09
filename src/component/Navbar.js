@@ -32,7 +32,7 @@ const Navbar = () => {
         <SearchContainer>
           <FontAwesomeIcon icon={faSearch} />
           <SearchInput type="text" placeholder="제품검색"></SearchInput>
-          <UnderLine src={underLine} alt="이모지 추가" />
+          <UnderLine src={underLine} alt="검색밑줄" />
         </SearchContainer>
       </SearchWrapper>
       <div></div>
@@ -76,6 +76,7 @@ const SearchWrapper = styled.div`
 const UnderLine = styled.img`
   right: 10px;
   padding-right: 10px;
+  /* width: 30px; */
 `;
 
 const SearchContainer = styled.div`
