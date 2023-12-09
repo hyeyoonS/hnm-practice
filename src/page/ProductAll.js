@@ -18,7 +18,6 @@ const ProductAll = () => {
   return (
     <ProductCardContainer>
       {productList.map((item)=>(<ProductCard item={item}/>))}
-
     </ProductCardContainer>
   );
 };

@@ -1,9 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom/dist';
 
 const ProductCard = ({item}) => {
+  const navigate=useNavigate();
+  const showDetail=()=>{
+    navigate(`/product/${item.id}`)
+
+  }
   return (
-    <ProductInfo>
+    <ProductInfo onClick={showDetail}>
       <StyledImage src={item?.img} />
       <div>{item?.choice === true ? "Conscious choice" : ""}</div>
       <div>{item?.title}</div>
@@ -26,6 +32,7 @@ font-size:13px;
 gap: 4px;
 text-align:left;
 width: 240px;
+height: 
 &:hover {
     transform: scale(1.1); 
     transition: transform 0.3s ease;

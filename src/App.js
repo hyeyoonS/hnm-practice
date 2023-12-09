@@ -6,6 +6,7 @@ import ProductDetail from './page/ProductDetail';
 import Navbar from './component/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
+import PrivateRoute from './route/PrivateRoute';
 
 //1. 전체상품페이지, 로그인페이지, 상품상세페이지(1개로재활용)
 //1-1. 공통 네비게이션바 만들기
@@ -27,7 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ProductAll />} />
         <Route path="/login" element={<Login setAuthenticate={setAuthenticate} />} />
-        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/product/:id" element={<PrivateRoute authenticate={authenticate} />} />
       </Routes>
     </div>
   );

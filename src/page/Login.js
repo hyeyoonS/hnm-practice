@@ -27,7 +27,7 @@ const Login = ({setAuthenticate}) => {
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group>
       <Button variant="danger" type="submit">
-        Submit
+       로그인하기
       </Button>
     </Form>
   </Container>;
