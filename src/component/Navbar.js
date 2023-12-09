@@ -3,13 +3,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faSearch } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
 import underLine from '../assets/underLine.svg';
+import { useLocation, useNavigate } from 'react-router-dom/dist';
 
 const Navbar = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const menuArray = ['여성', 'Divided', '남성', '신생아/유아', '아동', 'H&M Home', 'Sale', '지속가능성'];
+  const handleLogin=()=>{
+    navigate(`${location.pathname}/login`)
+  }
+
   return (
     <NavWrapper>
       <div>
-        <LoginButton>
+        <LoginButton onClick={handleLogin}>
           <FontAwesomeIcon icon={faUser} />
           <Login>로그인</Login>
         </LoginButton>
@@ -50,6 +57,7 @@ const LoginButton = styled.div`
   display: flex;
   justify-content: flex-end;
   margin: 20px;
+  align-items: center;
 `;
 
 const Login = styled.div`
