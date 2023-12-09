@@ -5,6 +5,7 @@ import Login from './page/Login';
 import ProductDetail from './page/ProductDetail';
 import Navbar from './component/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from 'react';
 
 //1. 전체상품페이지, 로그인페이지, 상품상세페이지(1개로재활용)
 //1-1. 공통 네비게이션바 만들기
@@ -18,12 +19,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //9. 상품 검색하기(filter)
 
 function App() {
+  const [authenticate, setAuthenticate] = useState(false);
+
   return (
     <div className="App">
       <Navbar />
       <Routes>
         <Route path="/" element={<ProductAll />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login setAuthenticate={setAuthenticate} />} />
         <Route path="/product/:id" element={<ProductDetail />} />
       </Routes>
     </div>
