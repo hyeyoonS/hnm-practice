@@ -17,12 +17,7 @@ const ProductAll = () => {
   }, []);
   return (
     <ProductCardContainer>
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
+      {productList.map((item)=>(<ProductCard item={item}/>))}
 
     </ProductCardContainer>
   );
